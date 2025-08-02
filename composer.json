@@ -1,0 +1,15 @@
+{
+    "name": "foresteller/htdocs",
+    "autoload": {
+        "psr-4": {
+            "htdocs\\": "dotaAPI/"
+        }
+    },
+    "authors": [
+        {
+            "name": "foresteller",
+            "email": "vovlalaooaa@gmail.com"
+        }
+    ],
+    "require": {}
+}
