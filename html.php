@@ -1,5 +1,6 @@
 <?php
-$heroes = require 'general.php';
+require __DIR__ . '/vendor/autoload.php';
+$heroes = require 'Service.php';
 ?>
 <!DOCTYPE html>
 <html lang="ru">

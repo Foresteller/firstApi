@@ -11,5 +11,7 @@
             "email": "vovlalaooaa@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-pdo": "*"
+    }
 }

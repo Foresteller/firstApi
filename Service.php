@@ -1,21 +1,25 @@
 <?php
+
 $url = 'https://api.opendota.com/api/heroes';
 $response = file_get_contents($url);
 $data = json_decode($response, true);
-$host = '127.0.0.1';
+
+$host = 'db';
 $db   = 'dota_heroes';
 $user = 'root';
-$pass = '';
+$pass = 'root';
 $dsn = "mysql:host=$host;dbname=$db";
+
 try {
     $pdo = new PDO($dsn, $user, $pass);
-//    echo "Connected successfully";
+
     $pdo->exec("CREATE TABLE IF NOT EXISTS heroes (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     localized_name VARCHAR(255) NOT NULL,
     primary_attr VARCHAR(255) NOT NULL,
     attack_type VARCHAR(255) NOT NULL,
     legs VARCHAR(255) NOT NULL)");
+
     $stmt = $pdo->prepare("INSERT INTO heroes (localized_name, primary_attr, attack_type,legs)
         VALUES (?, ?, ?, ?)");
     foreach ($data as $heroes) {
